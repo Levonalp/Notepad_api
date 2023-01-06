@@ -1,1 +1,0 @@
-web: gunicorn notepad_api.wsgi --log-file -
