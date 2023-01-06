@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-import dj_database_url # add this
+import dj_database_url 
 from decouple import config
 import os
 
@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', 'notepadapi.herokuapp.com/']
 AUTHENTICATION_BACKENDS = [
 
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -63,7 +63,7 @@ SITES_ID = 1
 
 MIDDLEWARE = [
     # this makes the cors package run for all requests.  A bit like app.use() in express
-        'whitenoise.middleware.WhiteNoiseMiddleware', # add this
+    'whitenoise.middleware.WhiteNoiseMiddleware', # add this
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
