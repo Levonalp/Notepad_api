@@ -11,23 +11,24 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-import dj_database_url 
+import dj_database_url
 from decouple import config
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) # edit this var
+BASE_DIR = os.path.dirname(os.path.dirname(
+    os.path.abspath(__file__)))  # edit this var
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY='y$8gc7=z2ntyvtpi27fomlms=+4*ll#_0sj%js5^rdcg20*&#_'
+SECRET_KEY = 'y$8gc7=z2ntyvtpi27fomlms=+4*ll#_0sj%js5^rdcg20*&#_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'notepadapi.herokuapp.com/']
+ALLOWED_HOSTS = ['localhost', 'notepadapi.herokuapp.com']
 AUTHENTICATION_BACKENDS = [
 
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -62,7 +63,7 @@ SITES_ID = 1
 
 MIDDLEWARE = [
     # this makes the cors package run for all requests.  A bit like app.use() in express
-    'whitenoise.middleware.WhiteNoiseMiddleware', # add this
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # add this
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -72,7 +73,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' # add this
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # add this
 
 CORS_ALLOW_ALL_ORIGINS = True  # add this
 
@@ -123,8 +124,8 @@ DATABASES = {
         'HOST': 'localhost',
     }
 }
-db_from_env = dj_database_url.config(conn_max_age=600) # add this
-DATABASES['default'].update(db_from_env) # add this
+db_from_env = dj_database_url.config(conn_max_age=600)  # add this
+DATABASES['default'].update(db_from_env)  # add this
 
 
 # Password validation
@@ -162,7 +163,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # add this
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # add this
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
