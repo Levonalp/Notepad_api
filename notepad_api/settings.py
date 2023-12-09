@@ -28,7 +28,7 @@ SECRET_KEY = 'y$8gc7=z2ntyvtpi27fomlms=+4*ll#_0sj%js5^rdcg20*&#_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'notepadapi.herokuapp.com']
+ALLOWED_HOSTS = ["*"]
 AUTHENTICATION_BACKENDS = [
 
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -133,7 +133,7 @@ DATABASES['default'].update(db_from_env)  # add this
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator', 
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
